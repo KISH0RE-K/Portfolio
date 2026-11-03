@@ -1,152 +1,332 @@
 body {
-    margin:0;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: white;
 }
 
-.navbar{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color:rgb(238, 240, 232);
-    width: 100%;    
-    padding: 7px 0px;
-    font-family: 'Changa One',sans-serif;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff2d3d;
+  width: 100%;
+  padding: 7px 0px;
+  font-family: "Changa One", sans-serif;
 }
 
-#name{
+#name {
+  display: flex;
+  margin-right: auto;
+  color: black;
+  padding: 0px 100px;
+  font-family: "Changa One", sans-serif;
+  letter-spacing: 1px;
+}
+
+.nav-links,
+a {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin-left: auto;
+  color: black;
+  padding: 0px 10px;
+  text-decoration: none;
+}
+
+#home {
+  display: flex;
+  background-image: url("images/Neon Coder Under the Red Moon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.home-content {
+  flex: 1;
+  color: whitesmoke;
+  text-align: left;
+  padding-bottom: 10px;
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
+  padding-left: 45px;
+}
+
+.a1 {
+  padding-right: 155px;
+}
+
+.a2 {
+  padding-right: 320px;
+}
+
+.a3 {
+  padding-right: 275px;
+}
+
+.animate.a1 {
+  animation: fadeSide 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.animate.a2 {
+  animation: fadeSide 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.animate.a3 {
+  animation: fadeSide 1s ease forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSide {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#about {
+  background-image: url("images/Minimalist White-Line Coding Workstation.png");
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: right;
+
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-content {
+  animation: fadeUp 1s ease forwards;
+  color: whitesmoke;
+  margin-left: 50px;
+  text-align: 70px left;
+  width: 50%;
+  flex-direction: column;
+}
+
+.head2 {
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+#skills {
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
+  background-image: url("images/Orbiting Code Technology Icons.png");
+}
+
+.skill {
+  padding-top: 20px;
+}
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr minmax(420px, 700px) 1fr;
+  column-gap: 40px;
+  row-gap: 20px;
+  padding: 0px 5%;
+  position: relative;
+  z-index: 2;
+  color: whitesmoke;
+  animation: fadeSide 1s ease forwards;
+}
+
+.skills-content h2,
+.skills-content > p {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.program {
+  grid-column: 1;
+  grid-row: 3;
+}
+.front {
+  grid-column: 1;
+  grid-row: 4;
+}
+.core {
+  grid-column: 1;
+  grid-row: 5;
+}
+
+.back {
+  grid-column: 3;
+  grid-row: 3;
+  justify-self: end;
+}
+.tools {
+  grid-column: 3;
+  grid-row: 4;
+  justify-self: end;
+}
+
+@media (max-width: 1100px) {
+  .skills-content {
+    grid-template-columns: 1fr;
+  }
+  .program,
+  .front,
+  .core,
+  .back,
+  .tools {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+  }
+}
+
+#projects {
+  background-image: url("images/Neon Orbiting Tech Workspace.png");
+  display: flex;
+  border: none;
+  margin: 0;
+
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: repeat (2, 1fr);
+  gap: 30px;
+  padding: 40px 8%;
+  color: whitesmoke;
+}
+
+.project-card {
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #ff4d5a;
+}
+
+.project-card p {
+  line-height: 1.6;
+}
+
+.project-card a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid #ff4d5a;
+  padding-bottom: 3px;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(255, 77, 90, 0.18);
+  border-color: #ff4d5a;
+}
+
+@media (max-width: 900px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+#contact {
+    min-height: 100vh;
     display: flex;
-    margin-right:auto;
-    color: black;
-    padding:0px 100px;
-    font-family: 'Changa One',sans-serif;
-    letter-spacing: 1px;
+    flex-direction: column;
+    align-items: flex-end; 
+    justify-content: center;
+    padding: 50px 8%;
+    box-sizing: border-box;
+    text-align: center;
+    background-position: left;
+    background-image: url("images/Minimalist Office Growth Desk Scene.png");
+    background-size: 100% auto;
+     min-height: 90vh;
 }
 
-.nav-links,a{
+#contact > h1,
+#contact > p {
+    max-width: 500px;
+    padding-right: 100px;
+}
+
+#contact>h1{
+    padding-right: 250px;
+}
+.contact-info {
+    text-align: left;
+    padding-right: 50px;
+}
+
+
+
+.contact-row{
     display: flex;
-    gap: 25px;
-    list-style: none;
-    margin-left: auto;
-    color: black;
-    padding: 0px 10px;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+    margin: 15px 0;
+    padding-right: 100px;
+    
+}
+
+#contact a {
+    display: inline;
+    white-space: nowrap;
+    color: #FF4D5A;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #ffffff;
     text-decoration: none;
 }
 
-#home{
-    display:flex;
-    background-image: url("images/Minimalist Office Growth Desk Scene.png");
-    background-repeat: no-repeat;
-    background-size: 125% auto;
-    background-position: left -130px center  ;
-    
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 90vh;
-}
-
-.home-content{
-    flex: 1;
-    color: whitesmoke;
-    text-align: right;
-    padding-bottom: 10px;
-}
-
-.animate{
-    opacity:0;
-    animation: fadeUp 1s ease forwards; 
-    padding-right: 545px;
-}
-
-.a1{
-    padding-right: 155px;    
-}
-
-.a2{
-    padding-right: 320px;
-}
-
-.a3{
-    padding-right: 275px;
-}
-    
-.animate.a1{
-    animation:fadeSide 1s ease forwards;
-    animation-delay: 0.3s;
-}
-
-.animate.a2{
-    animation:fadeSide 1s ease forwards;
-    animation-delay: 0.5s;
-}
-
-.animate.a3{
-    animation:fadeSide 1s ease forwards;
-    animation-delay: 0.7s;
-}
-
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes fadeSide{
-    from {
-        opacity:0;
-        transform:translateX(30px);
-    }
-    to{
-        opacity:1;
-        transform:translateX(0);
-    }
-}
-
-#about{
-    background-image: url("images/Minimalist White-Line Coding Workstation.png");
-    display:flex;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    background-position: right   ;
-    
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.about-content{
-    color: whitesmoke;
-    margin-left: 50px;
-    text-align: 70px left;
-    width:50%;
-}
-
-.head2{
-    padding-bottom:100px;
+footer{
     text-align: center;
 }
 
-#skills{
-    background-image: url("images/Orbiting Code Technology Icons.png");
-    background-size: 100% auto;
-    background-position: center;
-    display:flex;
-    max-height: 100vh;
-}
-
-.skills-content{
-    color:whitesmoke;
-}
-
-.program{
-    text-align: left;
-}
-
-.tools{
-    text-align:  right;
-}
